@@ -4,7 +4,7 @@ variable "resource_group_id" {
   type        = string
 }
 
-variable "service_name" {
+variable "cos_instance_name" {
   description = "Name of the instance"
   type        = string
 }
@@ -18,6 +18,7 @@ variable "plan" {
 variable "region" {
   description = "Provisioning Region"
   type        = string
+  default = "global"
 }
 
 variable "parameters" {
