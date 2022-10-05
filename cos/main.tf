@@ -2,18 +2,18 @@ module "cos" {
   version = "1.4.1"
   source = "terraform-ibm-modules/cos/ibm//modules/instance"
   bind_resource_key = var.bind_resource_key
-  service_name      = var.service_name
+  service_name      = var.cos_instance_name
   resource_group_id = data.ibm_resource_group.cos_group.id
   plan              = var.plan
-  region            = var.region
+  region            = "global"
   service_endpoints = var.service_endpoints
   parameters        = var.parameters
-  tags              = var.tags
+  tags              = ["blueprint"]
   create_timeout    = var.create_timeout
   update_timeout    = var.update_timeout
   delete_timeout    = var.delete_timeout
-  resource_key_name = var.resource_key_name
+  resource_key_name = "${var.cos_instance_name}-key"
   role              = var.role
-  key_tags          = var.key_tags
+  key_tags          = ["blueprint"]
   key_parameters    = var.key_parameters
 }
