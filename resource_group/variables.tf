@@ -1,0 +1,2 @@
+variable "provision" {}
+variable "name" {}
