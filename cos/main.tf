@@ -3,9 +3,9 @@ module "cos" {
   source = "terraform-ibm-modules/cos/ibm//modules/instance"
   bind_resource_key = var.bind_resource_key
   service_name      = var.cos_instance_name
-  resource_group_id = data.ibm_resource_group.cos_group.id
+  resource_group_id = var.resource_group_id
   plan              = var.plan
-  region            = "global"
+  region            = var.region
   service_endpoints = var.service_endpoints
   parameters        = var.parameters
   tags              = ["blueprint"]
