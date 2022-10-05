@@ -1,5 +1,5 @@
 module "cos" {
-    version = "1.4.1"
+  version = "1.4.1"
   source = "terraform-ibm-modules/cos/ibm//modules/instance"
   bind_resource_key = var.bind_resource_key
   service_name      = var.service_name
